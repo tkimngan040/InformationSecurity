@@ -15,18 +15,18 @@ from aes128 import (
 from sha256 import sha256_bytes
 
 
-STUDENT_NAME = "TRANTHIKIMNGAN"
+STUDENT_NAME = "Trần Thị Kim Ngân"
 ITERATIONS = 100
 
 
 def run_tests():
     name_digest = sha256_bytes(STUDENT_NAME.encode("utf-8"))
     assert name_digest.hex() == (
-        "31d1c5b8c2cda0422d218ad02160aeed"
-        "7ed0e15ece65e9206ccd44f01c39a950"
+        "03faf819ed237a4e4dee14c6af7b0232"
+        "05a438255367d1c9231e3b9dd1afd7f1"
     )
     student_key = derive_key_from_name(STUDENT_NAME)
-    assert student_key.hex() == "31d1c5b8c2cda0422d218ad02160aeed"
+    assert student_key.hex() == "03faf819ed237a4e4dee14c6af7b0232"
 
     key_a1 = bytes.fromhex("2b7e151628aed2a6abf7158809cf4f3c")
     round_keys_a1 = key_expansion(key_a1)
